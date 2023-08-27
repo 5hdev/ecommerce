@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "dba49db1-cd0d-445e-bd1d-515c9f258ef1",
+		"name": "EcommerceTask Apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3404198"
+	},
+	"item": [
+		{
+			"name": "Category content",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/category_content/?parent_cat=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"category_content",
+						""
+					],
+					"query": [
+						{
+							"key": "parent_cat",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "latest_product_in_categories",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "order req",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/order_post?firstname=Hamdi&lastname=Hamed&subtotal=300&tax=33&total=333&discount=2&email=test@email.com&mobile=021212121212&line1=st address 1&city=cairo&user_id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order_post"
+					],
+					"query": [
+						{
+							"key": "firstname",
+							"value": "Hamdi"
+						},
+						{
+							"key": "lastname",
+							"value": "Hamed"
+						},
+						{
+							"key": "subtotal",
+							"value": "300"
+						},
+						{
+							"key": "tax",
+							"value": "33"
+						},
+						{
+							"key": "total",
+							"value": "333"
+						},
+						{
+							"key": "discount",
+							"value": "2"
+						},
+						{
+							"key": "email",
+							"value": "test@email.com"
+						},
+						{
+							"key": "mobile",
+							"value": "021212121212"
+						},
+						{
+							"key": "line1",
+							"value": "st address 1"
+						},
+						{
+							"key": "city",
+							"value": "cairo"
+						},
+						{
+							"key": "user_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
