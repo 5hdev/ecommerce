@@ -2,8 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoriesApiController;
-use App\Http\Controllers\OrdersApiController;
+use App\Http\Controllers\Api\CategoriesApiController;
+use App\Http\Controllers\Api\OrdersApiController;
 
 /*
 |--------------------------------------------------------------------------

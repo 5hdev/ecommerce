@@ -27,7 +27,10 @@ class StoreOrderRequest extends FormRequest
             "firstname" => "required",
             "lastname" => "required",
             "city" => "required",
-            "email" => "required"
+            "email" => "required",
+            "mobile" => "required",
+            "subtotal" => "required",
+            "total" => "required",
         ];
     }
 }

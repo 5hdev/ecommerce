@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreOrderRequest;
 use App\Models\Order;
+use App\Models\OrderProduct;
 
 class OrdersApiController extends Controller
 {
@@ -28,12 +30,25 @@ class OrdersApiController extends Controller
     public function store(StoreOrderRequest $request)
     {
         //
-        // dd($request->user_id);
+
         $order = Order::create($request->all());
+        // dd($request->product_id[0]);
+
+        if ($order && $request->product_id && is_array($request->product_id)) {
+            foreach ($request->product_id as $key => $value) {
+                $orderProduct = new OrderProduct();
+                $orderProduct->order_id = $order->id;
+                $orderProduct->product_id = $request->product_id[$key];
+                $orderProduct->quantity = $request->quantity[$key];
+                $orderProduct->price = $request->price[$key];
+                $orderProduct->save();
+            }
+        }
+
         return response()->json([
             'status' => true,
             'message' => "Order sent successfully!",
-            'post' => $order
+            'order' => $order
         ], 200);
 
     }
